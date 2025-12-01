@@ -1625,3 +1625,15 @@ def ConvertXeGPUToXeVMPass : Pass<"convert-xegpu-to-xevm"> {
 }
 
 #endif // MLIR_CONVERSION_PASSES
+
+def ConvertSyncwarpToPascal : Pass<"convert-syncwarp-to-pascal", "ModuleOp"> {
+  let summary = "Converts sync warp to barrier sync";
+  let description = [{ Converts sync warp to barrier sync}];
+  
+  let constructor = "mlir::createConvertSyncwarpToPascalPass()";
+  
+  let dependentDialects = [
+    "LLVM::LLVMDialect",
+    "NVVM::NVVMDialect"
+  ];
+}

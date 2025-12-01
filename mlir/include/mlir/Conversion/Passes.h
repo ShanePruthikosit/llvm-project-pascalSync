@@ -86,7 +86,7 @@
 #include "mlir/Conversion/VectorToXeGPU/VectorToXeGPU.h"
 #include "mlir/Conversion/XeGPUToXeVM/XeGPUToXeVM.h"
 #include "mlir/Conversion/XeVMToLLVM/XeVMToLLVM.h"
-
+#include "mlir/Conversion/SyncwarpToPascal/SyncwarpToPascal.h"
 namespace mlir {
 
 /// Generate the code for registering conversion passes.
