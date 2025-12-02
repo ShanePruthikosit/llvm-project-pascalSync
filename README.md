@@ -33,12 +33,7 @@ page for information on building and running LLVM.
 For information on how to contribute to the LLVM project, please take a look at
 the [Contributing to LLVM](https://llvm.org/docs/Contributing.html) guide.
 
-## Getting in touch
+## Startup instructions for this fork
+1. clone the repository
+2. install the repository using the same method as a typical MLIR installation. Instructions can be found within this [link](https://mlir.llvm.org/getting_started/)
 
-Join the [LLVM Discourse forums](https://discourse.llvm.org/), [Discord
-chat](https://discord.gg/xS7Z362),
-[LLVM Office Hours](https://llvm.org/docs/GettingInvolved.html#office-hours) or
-[Regular sync-ups](https://llvm.org/docs/GettingInvolved.html#online-sync-ups).
-
-The LLVM project has adopted a [code of conduct](https://llvm.org/docs/CodeOfConduct.html) for
-participants to all modes of communication within the project.
