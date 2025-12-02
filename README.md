@@ -43,7 +43,7 @@ the [Contributing to LLVM](https://llvm.org/docs/Contributing.html) guide.
 note: this fork is only meant to be a proof of concept. Calls other than __syncwarp still remains untranslated and hence uncompilable to sm_60 if they are present 
 to convert the cuda kernel to .ll: 
 ```
-clang++ -S -emit-llvm --cuda-gpu-arch=sm_70 -xcuda sync.cu
+clang++ -S -emit-llvm --cuda-gpu-arch=sm_60 -xcuda sync.cu
 ```
 to convert the .ll to mlir:
 ```
