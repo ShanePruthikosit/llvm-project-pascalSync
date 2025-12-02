@@ -33,7 +33,32 @@ page for information on building and running LLVM.
 For information on how to contribute to the LLVM project, please take a look at
 the [Contributing to LLVM](https://llvm.org/docs/Contributing.html) guide.
 
-## Startup instructions for this fork
+## Setup instructions for this fork
 1. clone the repository
 2. install the repository using the same method as a typical MLIR installation. Instructions can be found within this [link](https://mlir.llvm.org/getting_started/)
+3. ensure that you have ninja
+4. run ninja mlir-opt in the build directory
+
+## Conversion instructions 
+note: this fork is only meant to be a proof of concept. Calls other than __syncwarp still remains untranslated and hence uncompilable to sm_60 if they are present 
+to convert the cuda kernel to .ll: 
+```
+$ clang++ -S -emit-llvm --cuda-gpu-arch=sm_70 -xcuda sync.cu
+```
+to convert the .ll to mlir:
+```
+mlir-opt sync.mlir --convert-syncwarp-to-pascal -o sync_pascal.mlir
+```
+to translate the mlir:
+```
+mlir-translate --mlir-to-llvmir sync_pascal.mlir -o sync_pascal.ll
+```
+convert back to ptx kernel:
+```
+llc -march=nvptx64 -mcpu=sm_60 sync_pascal.ll -o sync_sm60.ptx
+```
+
+
+
+
 
