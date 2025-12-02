@@ -40,7 +40,7 @@ the [Contributing to LLVM](https://llvm.org/docs/Contributing.html) guide.
 4. run ninja mlir-opt in the build directory
 
 ## Conversion instructions 
-note: this fork is only meant to be a proof of concept. Calls other than __syncwarp still remains untranslated and hence uncompilable to sm_60 if they are present 
+note: this fork is only meant to be a proof of concept. Calls other than __syncwarp still remains untranslated and hence uncompilable to sm_60 if they are present. It is recommended to use sync.cu found in the test-directory directory.
 to convert the cuda kernel to .ll: 
 ```
 clang++ -S -emit-llvm --cuda-gpu-arch=sm_60 -xcuda sync.cu
